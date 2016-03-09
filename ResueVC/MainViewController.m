@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    self.title = @"main";
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setup];
@@ -61,7 +61,8 @@
 
 - (void)setup
 {
-    CGRect frame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height);
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    CGRect frame = CGRectMake(0, 64, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height-64);
     _scrollView  = [[UIScrollView alloc] initWithFrame:frame];
     
     _scrollView.backgroundColor = [UIColor whiteColor];
@@ -71,6 +72,7 @@
     _scrollView.delegate        = self;
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator   = NO;
+    _scrollView.directionalLockEnabled = YES;
     
     _currentPage                = -1;
     _resueViewControllers       = [NSMutableArray array];

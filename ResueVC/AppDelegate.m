@@ -66,7 +66,7 @@
         NSLog(@"右边越界");
     };
     
-    self.window.rootViewController = vc;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
     [self.window makeKeyAndVisible];
     
     

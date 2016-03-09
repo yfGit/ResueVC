@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"ResueB";
     // Do any additional setup after loading the view from its nib.
     _label = [[UILabel alloc] initWithFrame:CGRectMake(20, 500, 100, 30)];
     _label.center = self.view.center;
@@ -48,4 +49,12 @@
 }
 
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if (self.navigationController) {
+        ResueViewControllerB *vc = [[ResueViewControllerB alloc] init];
+        vc.view.backgroundColor = [UIColor colorWithRed:random()%255/255.0 green:random()%255/255.0 blue:random()%255/255.0 alpha:1];
+        [self.navigationController pushViewController: vc animated:YES];
+    }
+}
 @end
